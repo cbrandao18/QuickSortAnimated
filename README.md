@@ -12,3 +12,4 @@ A visual representation of how merge sort works.
 * JavaScript for merge sort logic
 * React for frontend
 * react-motion library for animation
+* lodash for random number set generation
