@@ -1,0 +1,25 @@
+.main {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.number {
+  width: 20px;
+  color: black;
+  padding: 20px;
+  display: inline-block;
+  margin: 5px;
+  vertical-align: bottom;
+  &-small {
+    height: 33px;
+    background-color: red;
+  }
+  &-medium {
+    height: 66px;
+    background-color: yellow;
+  }
+  &-large {
+    height: 100px;
+    background-color: green;
+  }
+}

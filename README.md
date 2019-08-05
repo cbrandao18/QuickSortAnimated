@@ -1,15 +1,15 @@
-# Merge Sorted Animated
+# Quick Sorted Animated
 
 ## Overview
-A visual representation of how merge sort works.
+A visual representation of how quick sort works.
 
 ## Features
 * Create a random unsorted set of numbers
-* Start the visualization of the merge sort choosing a speed between slow to fast
+* Start the visualization of the quick sort choosing a speed between slow to fast
 * Psuedocode on the side that is highlighted according to where the visualization is
 
 ## Technologies
-* JavaScript for merge sort logic
+* JavaScript for quick sort logic
 * React for frontend
 * react-motion library for animation
 * lodash for random number set generation

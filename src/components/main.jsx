@@ -24,12 +24,20 @@ class Main extends React.Component {
     this.setState({numbers: newNums});
   }
 
+  rearrange(){
+    const newNums = [...this.state.numbers];
+    const lastEl = newNums.pop();
+    newNums.unshift(lastEl)
+    this.setState({ numbers: newNums})
+  }
+
   render() {
     let numElements = this.state.numbers.map((num, idx) => <Number key={`${num}-${idx}`} num={num}/>)
 
     return (
       <div className="main">
         {numElements}
+        <button onClick={this.rearrange.bind(this)}>rearrange</button>
       </div>
     )
   }

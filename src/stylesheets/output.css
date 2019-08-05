@@ -1,0 +1,67 @@
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, h3, h4, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent; }
+
+ul, ol {
+  list-style: none; }
+
+img {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+input,
+textarea,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+button,
+input[type="submit"], a {
+  cursor: pointer; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f3f5f9; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+.main {
+  width: 700px;
+  margin: 0 auto; }
+
+.number {
+  width: 20px;
+  color: black;
+  padding: 20px;
+  display: inline-block;
+  margin: 5px;
+  vertical-align: bottom; }
+  .number-small {
+    height: 33px;
+    background-color: red; }
+  .number-medium {
+    height: 66px;
+    background-color: yellow; }
+  .number-large {
+    height: 100px;
+    background-color: green; }
+
+/*# sourceMappingURL=output.css.map */
