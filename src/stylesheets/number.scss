@@ -13,15 +13,12 @@
   background-color: gray;
   &-small {
     height: 33px;
-    // background-color: red;
   }
   &-medium {
     height: 66px;
-    // background-color: yellow;
   }
   &-large {
     height: 100px;
-    // background-color: green;
   }
 }
 
@@ -35,4 +32,9 @@
 
 .visited {
   background-color: blue;
+}
+
+.active-line {
+  background-color: black;
+  color: white;
 }

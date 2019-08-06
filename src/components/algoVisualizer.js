@@ -32,10 +32,23 @@ class AlgoVisualizer extends React.Component {
     return arrHTML;
   }
 
+  generateHighlightedAlgo(){
+    return this.state.algorithm.map((stepText, idx) => {
+      if (idx === this.props.step.stepInAlgo) {
+        return <p key={`algo-line-${idx}`} className="active-line">{stepText}</p>
+      } else {
+        return <p key={`algo-line-${idx}`}>{stepText}</p>
+      }
+    })
+  }
+
   render(){
     return (
       <div>
-        {this.generateNumberColumns(this.props.step.arrData)}
+        <div className="algorithm">
+          {this.generateHighlightedAlgo()}
+        </div>
+        {this.props.step ? this.generateNumberColumns(this.props.step.arrData) : "" }
       </div>
     )
   }

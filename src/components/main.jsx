@@ -12,6 +12,7 @@ class Main extends React.Component {
 
     this.state = {
       numbers,
+      currStep: 0,
       steps
     }
   }
@@ -29,17 +30,20 @@ class Main extends React.Component {
     return newNums;
   }
 
-  generateOneStep(steps, array, stepInAlgo, left, right){
+  generateOneStep(steps, array, stepInAlgo, left, right, currElIdx){
     let arrData = array.map((el, idx) => {
-      if (stepInAlgo === 0 && idx === 0) {
+      if (idx === 0) {
         return { num: el, cssClass: "pivot" }
-      } else {
+      } else if (stepInAlgo === 1 && idx === currElIdx){
+        return { num: el, cssClass: "visited" }
+      } 
+      else {
         return { num: el }
       }
     })
     steps.push({
       arrData,
-      step: stepInAlgo,
+      stepInAlgo: stepInAlgo,
       data: {
         left: left,
         right: right
@@ -58,7 +62,7 @@ class Main extends React.Component {
       let left = [];
       let right = [];
       for (let i = 1; i < array.length; i++) {
-        this.generateOneStep(steps, array, 1, left, right);
+        this.generateOneStep(steps, array, 1, left, right, i);
         if (array[i] < pivot) {
           left.push(array[i])
           this.generateOneStep(steps, array, 2, left, right);
@@ -81,29 +85,17 @@ class Main extends React.Component {
     return steps;
   }
 
-  // rearrange(){
-  //   const newNums = [...this.state.numbers];
-  //   const lastEl = newNums.pop();
-  //   newNums.unshift(lastEl)
-  //   this.setState({ numbers: newNums})
-  // }
+  nextStep(){
+    if (this.state.currStep !== this.state.steps.length -1){
+      this.setState({currStep: this.state.currStep+1}) 
+    }
+  }
 
   render() {
-    // let cssClass = "";
-    // let numElements = this.state.numbers.map((num, idx) => {
-    //   if (idx === this.state.pivotidx){
-    //     cssClass += "pivot "
-    //   } else if (idx === this.state.storeIdx){
-    //     cssClass += "store "
-    //   }
-    //   return <Number key={`${num}-${idx}`} num={num} classes={`${cssClass}`}/>
-    // })
-
     return (
       <div className="main">
-        <AlgoVisualizer step={this.state.steps[this.state.steps.length-1]}/>
-        {/* {numElements} */}
-        {/* <button onClick={this.rearrange.bind(this)}>rearrange</button> */}
+        <AlgoVisualizer step={this.state.steps[this.state.currStep]} />
+        <button onClick={this.nextStep.bind(this)}>next</button>
       </div>
     )
   }
