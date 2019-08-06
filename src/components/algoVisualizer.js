@@ -43,7 +43,7 @@ class AlgoVisualizer extends React.Component {
     return (
       <div>
         <div className="algorithm">
-          <h1>Merge Sort Algorithm</h1>
+          <h1>Quick Sort Algorithm</h1>
           {this.generateHighlightedAlgo()}
         </div>
         <div className="data">
