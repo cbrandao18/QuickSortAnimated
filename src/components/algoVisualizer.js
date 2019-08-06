@@ -7,18 +7,15 @@ class AlgoVisualizer extends React.Component {
 
     this.state = {
       algorithm: [
-        "for each unsorted partition set the first element as the pivot",
-        "for i = pivotIndex + 1, if element[i] < element[pivot]",
+        "for each unsorted partition, set the first element as the pivot",
+        "for i = pivotIndex + 1, if element[i] < pivot",
         "push into a left array",
         "else push into a right array",
         "send the left and right arrays back into the function",
-        "return the left array concatennated with the the pivot and then the right array"
+        "return the left array concatenated with the the pivot and then the right array"
       ]
     }
   }
-  // componentDidMount(){
-  //   this.generateNumberColumns(this.props.step.arrData);
-  // }
 
   generateNumberColumns(data){
     let arrHTML = data.map( (dataObj, idx) => {
@@ -46,9 +43,12 @@ class AlgoVisualizer extends React.Component {
     return (
       <div>
         <div className="algorithm">
+          <h1>Merge Sort Algorithm</h1>
           {this.generateHighlightedAlgo()}
         </div>
-        {this.props.step ? this.generateNumberColumns(this.props.step.arrData) : "" }
+        <div className="data">
+          {this.props.step ? this.generateNumberColumns(this.props.step.arrData) : "" }
+        </div>
       </div>
     )
   }

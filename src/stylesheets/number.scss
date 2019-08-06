@@ -11,6 +11,7 @@
   margin: 5px;
   vertical-align: bottom;
   background-color: gray;
+  text-align: center;
   &-small {
     height: 33px;
   }
@@ -37,4 +38,19 @@
 .active-line {
   background-color: black;
   color: white;
+}
+
+.algorithm {
+  font-family: 'Ubuntu Mono';
+  font-size: 17px;
+}
+
+h1 {
+  font-family: 'Ubuntu Mono';
+  font-size: 30px;
+  padding: 10px 0px;
+}
+.data {
+  padding-top: 20px;
+  height: 180px;
 }

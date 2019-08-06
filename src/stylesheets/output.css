@@ -54,7 +54,8 @@ input[type=number]::-webkit-outer-spin-button {
   display: inline-block;
   margin: 5px;
   vertical-align: bottom;
-  background-color: gray; }
+  background-color: gray;
+  text-align: center; }
   .number-small {
     height: 33px; }
   .number-medium {
@@ -74,5 +75,18 @@ input[type=number]::-webkit-outer-spin-button {
 .active-line {
   background-color: black;
   color: white; }
+
+.algorithm {
+  font-family: 'Ubuntu Mono';
+  font-size: 17px; }
+
+h1 {
+  font-family: 'Ubuntu Mono';
+  font-size: 30px;
+  padding: 10px 0px; }
+
+.data {
+  padding-top: 20px;
+  height: 180px; }
 
 /*# sourceMappingURL=output.css.map */
