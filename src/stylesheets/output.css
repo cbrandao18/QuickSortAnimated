@@ -53,15 +53,22 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 20px;
   display: inline-block;
   margin: 5px;
-  vertical-align: bottom; }
+  vertical-align: bottom;
+  background-color: gray; }
   .number-small {
-    height: 33px;
-    background-color: red; }
+    height: 33px; }
   .number-medium {
-    height: 66px;
-    background-color: yellow; }
+    height: 66px; }
   .number-large {
-    height: 100px;
-    background-color: green; }
+    height: 100px; }
+
+.pivot {
+  background-color: yellow; }
+
+.store {
+  background-color: red; }
+
+.visited {
+  background-color: blue; }
 
 /*# sourceMappingURL=output.css.map */

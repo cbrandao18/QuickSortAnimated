@@ -11,7 +11,7 @@ class Number extends React.Component {
       size = "large"
     }
     return (
-      <div className={`number number-${size}`}>
+      <div className={`number number-${size} ${this.props.classes}`}>
         {this.props.num}
       </div>
     )

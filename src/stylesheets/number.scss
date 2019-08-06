@@ -10,16 +10,29 @@
   display: inline-block;
   margin: 5px;
   vertical-align: bottom;
+  background-color: gray;
   &-small {
     height: 33px;
-    background-color: red;
+    // background-color: red;
   }
   &-medium {
     height: 66px;
-    background-color: yellow;
+    // background-color: yellow;
   }
   &-large {
     height: 100px;
-    background-color: green;
+    // background-color: green;
   }
+}
+
+.pivot {
+  background-color: yellow;
+}
+
+.store {
+  background-color: red;
+}
+
+.visited {
+  background-color: blue;
 }
