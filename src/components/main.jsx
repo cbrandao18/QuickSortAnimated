@@ -21,6 +21,12 @@ class Main extends React.Component {
   componentDidMount(){
     let newNums = this.newNumbers();
     this.generateSteps(newNums);
+    
+    this.interval = setInterval(() => {
+      if (!this.state.paused) {
+        this.nextStep();
+      }
+    }, 1000)
   }
 
   componentWillUnmount(){
@@ -104,11 +110,7 @@ class Main extends React.Component {
 
   play(){
     this.setState({paused: !this.state.paused})
-    this.interval = setInterval(()=> {
-      if (!this.state.paused){
-        this.nextStep();
-      }
-    }, 1000)
+
   }
 
   render() {
