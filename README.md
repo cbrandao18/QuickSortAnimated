@@ -6,7 +6,7 @@ A visual representation of how quick sort works.
 ## Features
 * Create a random unsorted set of numbers
 * Start the visualization of the quick sort choosing a speed between slow to fast
-* Psuedocode on the side that is highlighted according to where the visualization is
+* Psuedocode highlighted according to where the visualization is
 
 ## Technologies
 * JavaScript for quick sort logic
