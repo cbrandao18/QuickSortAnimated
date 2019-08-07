@@ -11,5 +11,4 @@ A visual representation of how quick sort works.
 ## Technologies
 * JavaScript for quick sort logic
 * React for frontend
-* react-motion library for animation
 * lodash for random number set generation
