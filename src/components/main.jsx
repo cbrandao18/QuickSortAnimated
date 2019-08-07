@@ -1,6 +1,6 @@
 import React from 'react'
-import Number from './number';
 import AlgoVisualizer from './algoVisualizer'
+import { clearInterval } from 'timers';
 const random = require('lodash.random')
 
 class Main extends React.Component {
@@ -13,13 +13,18 @@ class Main extends React.Component {
     this.state = {
       numbers,
       currStep: 0,
-      steps
+      steps,
+      paused: true
     }
   }
 
   componentDidMount(){
     let newNums = this.newNumbers();
     this.generateSteps(newNums);
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.interval);
   }
 
   newNumbers(){
@@ -32,7 +37,7 @@ class Main extends React.Component {
 
   generateOneStep(steps, array, stepInAlgo, left, right, currElIdx){
     let arrData = array.map((el, idx) => {
-      if (idx === 0) {
+      if (idx === 0 && stepInAlgo !== 5) {
         return { num: el, cssClass: "pivot" }
       } else if (stepInAlgo === 1 && idx === currElIdx){
         return { num: el, cssClass: "visited" }
@@ -45,8 +50,8 @@ class Main extends React.Component {
       arrData,
       stepInAlgo: stepInAlgo,
       data: {
-        left: left,
-        right: right
+        left: [...left],
+        right: [...right]
       }
     })
   }
@@ -91,11 +96,32 @@ class Main extends React.Component {
     }
   }
 
+  shuffle(){
+    let newNums = this.newNumbers();
+    let newSteps = this.generateSteps(newNums);
+    this.setState({numbers: newNums, currStep: 0, steps: newSteps})
+  }
+
+  play(){
+    this.setState({paused: !this.state.paused})
+    this.interval = setInterval(()=> {
+      if (!this.state.paused){
+        this.nextStep();
+      }
+    }, 1000)
+  }
+
   render() {
+    let playPause = this.state.paused ? "play" : "pause"
     return (
       <div className="main">
         <AlgoVisualizer step={this.state.steps[this.state.currStep]} />
-        <button onClick={this.nextStep.bind(this)}>next</button>
+        <div className="buttons">
+          <h2>Controls</h2>
+          <button onClick={this.play.bind(this)}>{playPause}</button>
+          <button onClick={this.nextStep.bind(this)}>next step</button>
+          <button onClick={this.shuffle.bind(this)}>new nums</button>
+        </div>
       </div>
     )
   }

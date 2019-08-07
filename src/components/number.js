@@ -2,17 +2,13 @@ import React from 'react'
 
 class Number extends React.Component {
   render() {
-    let size;
-    if (this.props.num <= 16){
-      size = "small"
-    } else if (this.props.num > 16 && this.props.num < 32) {
-      size = "medium"
-    } else {
-      size = "large"
-    }
+    let classes = this.props.classes ? `number ${this.props.classes}` : 'number'
     return (
-      <div className={`number number-${size} ${this.props.classes}`}>
-        {this.props.num}
+      <div 
+        className={classes} 
+        style={{height: this.props.num * 5}}
+      >
+          {this.props.num}
       </div>
     )
   }
