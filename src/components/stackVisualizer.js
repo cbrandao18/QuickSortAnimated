@@ -4,7 +4,9 @@ class StackVisualizer extends React.Component {
 
   visualizeArray(arr){
     let arrStr = "[";
+    let idxForKey;
     arr.forEach((el, idx) => {
+      idxForKey = idx;
       if (idx < arr.length-1){
         arrStr += el + ", "
       } else {
@@ -13,14 +15,14 @@ class StackVisualizer extends React.Component {
     })
     arrStr += "]"
 
-    return <p>{arrStr}</p>
+    return <p key={`stack-vis-${idxForKey}`}>{arrStr}</p>
   }
 
   render(){
     let arrHTML = this.props.step.stack.length ? this.props.step.stack.map( arr => this.visualizeArray(arr)) : "Empty"
     return (
       <div className="stack-wrapper">
-        <h2>Stack</h2>
+        <h2>Call Stack</h2>
         <div className="stack">
           <div className="stack-inner">
             {arrHTML}

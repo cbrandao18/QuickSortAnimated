@@ -15,7 +15,7 @@ span, article, footer, time, small {
   box-sizing: inherit;
   background: transparent; }
 
-ul, ol {
+ul {
   list-style: none; }
 
 img {
@@ -51,22 +51,6 @@ input[type=number]::-webkit-outer-spin-button {
 .main-visualizers {
   display: flex; }
 
-.stack-wrapper {
-  padding: 0px 40px; }
-
-.stack {
-  width: 290px;
-  position: relative;
-  height: 150px;
-  border: 1px solid black;
-  padding: 5px;
-  margin: 0 auto; }
-  .stack .stack-inner {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 0; }
-
 .number {
   width: 20px;
   color: black;
@@ -93,6 +77,14 @@ input[type=number]::-webkit-outer-spin-button {
     transform: translateX(400px); }
   100% {
     transform: translateX(0); } }
+#yellow {
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: black;
+  color: yellow; }
+
+#green {
+  color: #5C946E; }
+
 .pivot {
   background-color: yellow; }
 
@@ -124,9 +116,7 @@ h1 {
   justify-content: space-between; }
 
 .buttons {
-  bottom: 0;
-  position: absolute;
-  height: 100px; }
+  padding-left: 40px; }
 
 .spacer {
   height: 300px;
@@ -158,5 +148,27 @@ h2 {
   font-family: 'Ubuntu Mono';
   font-size: 20px;
   margin-bottom: 10px; }
+
+.stack-wrapper {
+  padding: 0px 40px; }
+
+.stack {
+  width: 290px;
+  position: relative;
+  height: 150px;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 0 auto; }
+  .stack .stack-inner {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 0; }
+
+.instructions {
+  padding: 40px; }
+
+strong {
+  font-weight: 600; }
 
 /*# sourceMappingURL=output.css.map */

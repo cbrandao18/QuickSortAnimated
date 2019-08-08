@@ -27,7 +27,7 @@ class Main extends React.Component {
       if (!this.state.paused) {
         this.nextStep();
       }
-    }, 1000)
+    }, 500)
   }
 
   componentWillUnmount(){
@@ -125,13 +125,25 @@ class Main extends React.Component {
       <div className="main">
         <div className="main-visualizers">
           <AlgoVisualizer step={this.state.steps[this.state.currStep]} />
-          <StackVisualizer step={this.state.steps[this.state.currStep]} />
-        </div>
-        <div className="buttons">
-          <h2>Controls</h2>
-          <button onClick={this.play.bind(this)}>{playPause}</button>
-          <button onClick={this.nextStep.bind(this)}>next step</button>
-          <button onClick={this.shuffle.bind(this)}>new nums</button>
+          <div>
+            <StackVisualizer step={this.state.steps[this.state.currStep]} />
+            <div className="instructions">
+              <h2>Instructions</h2>
+              <ul>
+                <li>Press <strong>play/pause</strong> to run through the visualization</li>
+                <li>Press <strong>next step</strong> to manually step through</li>
+                <li>Press <strong>new nums</strong> to generate a new set of numbers</li>
+                <li><strong id="yellow">yellow</strong> indicates the current pivot</li>
+                <li><strong id="green">green</strong> indicates number current being visited</li>
+              </ul>
+            </div>
+            <div className="buttons">
+              <h2>Controls</h2>
+              <button onClick={this.play.bind(this)}>{playPause}</button>
+              <button onClick={this.nextStep.bind(this)}>next step</button>
+              <button onClick={this.shuffle.bind(this)}>new nums</button>
+            </div>
+          </div>
         </div>
       </div>
     )

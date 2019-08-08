@@ -1,0 +1,18 @@
+.stack-wrapper {
+  padding: 0px 40px;
+}
+
+.stack {
+  width: 290px;
+  position: relative;
+  height: 150px;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 0 auto;
+  .stack-inner {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 0;
+  }
+}
