@@ -18,7 +18,7 @@ class AlgoVisualizer extends React.Component {
   }
 
   generateNumberColumns(data){
-    let subArray = [<div className="spacer-data"></div>]
+    let subArray = [<div key="spacer" className="spacer-data"></div>]
     let arrHTML = data.map( (dataObj, idx) => {
       if (dataObj.cssClass){
         return <Number key={`${dataObj.num}-${idx}`} num={dataObj.num} classes={dataObj.cssClass}/>
@@ -40,8 +40,8 @@ class AlgoVisualizer extends React.Component {
     })
   }
 
-  generateSubArray(arr){
-    let subArray = [<div className="spacer"></div>]
+  generateSubArray(arr, side){
+    let subArray = [<div key={`subarray-${side}`} className="spacer"></div>]
     let mappedRes =  arr.map((el, idx) => {
       return <Number key={`subarray-${el}-${idx}`} num={el} />
     })
@@ -62,12 +62,12 @@ class AlgoVisualizer extends React.Component {
           <div className="left">
             <h2>Left Array</h2>
             <p>Holds numbers less than the current pivot</p>
-            {this.props.step && this.props.step.data.left ? this.generateSubArray(this.props.step.data.left) : ""}
+            {this.props.step && this.props.step.data.left ? this.generateSubArray(this.props.step.data.left, "left") : ""}
           </div>
           <div className="right">
             <h2>Right Array</h2>
             <p>Holds numbers greater than or equal to the current pivot</p>
-            {this.props.step && this.props.step.data.right ? this.generateSubArray(this.props.step.data.right) : ""}
+            {this.props.step && this.props.step.data.right ? this.generateSubArray(this.props.step.data.right, "right") : ""}
           </div>
         </div>
       </div>

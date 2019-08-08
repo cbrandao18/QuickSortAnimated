@@ -1,5 +1,6 @@
 import React from 'react'
 import AlgoVisualizer from './algoVisualizer'
+import StackVisualizer from './stackVisualizer'
 import { clearInterval } from 'timers';
 const random = require('lodash.random')
 
@@ -118,6 +119,7 @@ class Main extends React.Component {
     return (
       <div className="main">
         <AlgoVisualizer step={this.state.steps[this.state.currStep]} />
+        <StackVisualizer steps={this.state.steps} currStep={this.state.currStep} />
         <div className="buttons">
           <h2>Controls</h2>
           <button onClick={this.play.bind(this)}>{playPause}</button>
