@@ -4,7 +4,7 @@
 A visual representation of how quick sort works.
 
 ## Preview
-![Quick Sort](./public/assets/quickSortPreview3.gif)
+![Quick Sort](./public/assets/quickSortPreview.png)
 
 ## Features
 * Create a random unsorted set of numbers
