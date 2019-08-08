@@ -1,5 +1,7 @@
 # Quick Sorted Animated
 
+[Live Link](https://quick-sort-animated.herokuapp.com/)
+
 ## Overview
 A visual representation of how quick sort works.
 
@@ -16,3 +18,7 @@ A visual representation of how quick sort works.
 * JavaScript for sorting logic
 * React for frontend
 * lodash for random number set generation
+
+## Future Features
+* Allow for adjustment of speed for the auto-playing
+* Add more sorting algorithms
