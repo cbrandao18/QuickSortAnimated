@@ -42,7 +42,7 @@ class Main extends React.Component {
     return newNums;
   }
 
-  generateOneStep(steps, array, stepInAlgo, left, right, currElIdx){
+  generateOneStep(steps, array, stack, stepInAlgo, left, right, currElIdx){
     let arrData = array.map((el, idx) => {
       if (idx === 0 && stepInAlgo !== 5) {
         return { num: el, cssClass: "pivot" }
@@ -54,8 +54,10 @@ class Main extends React.Component {
       }
     })
     steps.push({
+      stack,
+      array,
       arrData,
-      stepInAlgo: stepInAlgo,
+      stepInAlgo,
       data: {
         left: [...left],
         right: [...right]
@@ -66,34 +68,37 @@ class Main extends React.Component {
   generateSteps(array){
     let steps = [];
 
-    let quicksort = (array) => {
+    let quicksort = (array, stack) => {
+      stack = [array, ...stack]
       if (array.length < 2) return array;
       const pivot = array[0];
-      this.generateOneStep(steps, array, 0, [], []);
+      this.generateOneStep(steps, array, stack, 0, [], []);
 
       let left = [];
       let right = [];
       for (let i = 1; i < array.length; i++) {
-        this.generateOneStep(steps, array, 1, left, right, i);
+        this.generateOneStep(steps, array, stack, 1, left, right, i);
         if (array[i] < pivot) {
           left.push(array[i])
-          this.generateOneStep(steps, array, 2, left, right);
+          this.generateOneStep(steps, array, stack, 2, left, right);
         } else {
           right.push(array[i])
-          this.generateOneStep(steps, array, 3, left, right);
+          this.generateOneStep(steps, array, stack, 3, left, right);
         }
       }
 
-      this.generateOneStep(steps, array, 4, left, right);
-      left = quicksort(left);
-      right = quicksort(right);
+      this.generateOneStep(steps, array, stack, 4, left, right);
+      left = quicksort(left, stack);
+      right = quicksort(right, stack);
 
       let sorted = left.concat([pivot]).concat(right)
-      this.generateOneStep(steps, sorted, 5, left, right);
+      stack = stack.slice(1);
+      this.generateOneStep(steps, sorted, stack, 5, left, right);
+
       return sorted;
     }
 
-    quicksort(array);
+    quicksort(array, []);
     return steps;
   }
 
@@ -118,8 +123,10 @@ class Main extends React.Component {
     let playPause = this.state.paused ? "play" : "pause"
     return (
       <div className="main">
-        <AlgoVisualizer step={this.state.steps[this.state.currStep]} />
-        <StackVisualizer steps={this.state.steps} currStep={this.state.currStep} />
+        <div className="main-visualizers">
+          <AlgoVisualizer step={this.state.steps[this.state.currStep]} />
+          <StackVisualizer step={this.state.steps[this.state.currStep]} />
+        </div>
         <div className="buttons">
           <h2>Controls</h2>
           <button onClick={this.play.bind(this)}>{playPause}</button>

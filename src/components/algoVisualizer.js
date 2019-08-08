@@ -7,11 +7,11 @@ class AlgoVisualizer extends React.Component {
 
     this.state = {
       algorithm: [
-        "for each unsorted partition, set the first element as the pivot",
+        "set the first element as the pivot",
         "for i = pivotIndex + 1, if element[i] < pivot",
-        "push into a left array",
-        "else push into a right array",
-        "recursively send the left array, then the right array back into the function",
+        "&nbsp;&nbsp;&nbsp;&nbsp;push into a left array",
+        "&nbsp;&nbsp;&nbsp;&nbsp;else push into a right array",
+        "recursively sort the left array, then the right array",
         "return the left array concatenated with the the pivot and then the right array"
       ]
     }
@@ -33,9 +33,9 @@ class AlgoVisualizer extends React.Component {
   generateHighlightedAlgo(){
     return this.state.algorithm.map((stepText, idx) => {
       if (idx === this.props.step.stepInAlgo) {
-        return <p key={`algo-line-${idx}`} className="active-line">{stepText}</p>
+        return <p dangerouslySetInnerHTML={{__html: stepText}} key={`algo-line-${idx}`} className="active-line"></p>
       } else {
-        return <p key={`algo-line-${idx}`}>{stepText}</p>
+        return <p dangerouslySetInnerHTML={{ __html: stepText }} key={`algo-line-${idx}`}></p>
       }
     })
   }
