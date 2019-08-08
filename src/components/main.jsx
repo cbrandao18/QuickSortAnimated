@@ -143,6 +143,19 @@ class Main extends React.Component {
               <button onClick={this.nextStep.bind(this)}>next step</button>
               <button onClick={this.shuffle.bind(this)}>new nums</button>
             </div>
+            <div className="instructions">
+              <h2>Note</h2>
+              <p>
+                This isn't the best implementation of quick sort, 
+                as it is not doing in place swapping.</p>
+            </div>
+          </div>
+        </div>
+        <div className="footer">
+          <div className="footer-inner">
+            <h2>Developed by: Christie Brandao</h2>
+            <a href="https://github.com/cbrandao18" target="_blank">github</a>
+            <a href="https://www.linkedin.com/in/christiebrandao/" target="_blank">linkedin</a>
           </div>
         </div>
       </div>

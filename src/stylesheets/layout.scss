@@ -1,0 +1,24 @@
+.instructions {
+  padding: 40px;
+  width: 300px;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 5px;
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    a {
+      text-decoration: underline;
+      font-family: 'Ubunto Mono';
+      margin: 0px 5px;
+    }
+  }
+}

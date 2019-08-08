@@ -6,6 +6,7 @@
 
 .main-visualizers {
   display: flex;
+  justify-content: space-between;
 }
 
 .number {
@@ -84,13 +85,9 @@ h1 {
 }
 
 .data {
-  padding-top: 10px;
+  padding: 20px 0px;
   width: 600px;
   margin: 0 auto;
-}
-
-.algorithm-wrapper {
-  // padding: 40px;
 }
 
 .sub-arrays {
@@ -100,9 +97,6 @@ h1 {
 
 .buttons {
   padding-left: 40px;
-  // bottom: 0;
-  // position: absolute;
-  // height: 100px;
 }
 
 .spacer {
