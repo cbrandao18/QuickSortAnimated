@@ -50,7 +50,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .main-visualizers {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-evenly; }
 
 .number {
   width: 20px;
@@ -168,7 +168,7 @@ h2 {
 
 .instructions {
   padding: 40px;
-  width: 300px; }
+  max-width: 300px; }
 
 strong {
   font-weight: 600; }
