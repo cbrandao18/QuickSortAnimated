@@ -3,7 +3,9 @@
 [Live Link](https://quick-sort-animated.herokuapp.com/)
 
 ## Overview
-A visual representation of how quick sort works.
+A visual representation of a recursive quicksort algorithm implementation. 
+The implementation being visualized is not the optimal implementation of quicksort
+as it is not doing in place swapping.
 
 ## Preview
 ![Quick Sort](./public/assets/quickSortPreview.png)
