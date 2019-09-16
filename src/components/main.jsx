@@ -154,8 +154,8 @@ class Main extends React.Component {
         <div className="footer">
           <div className="footer-inner">
             <h2>Developed by: Christie Brandao</h2>
-            <a href="https://github.com/cbrandao18" target="_blank">github</a>
-            <a href="https://www.linkedin.com/in/christiebrandao/" target="_blank">linkedin</a>
+            <a href="https://github.com/cbrandao18">github</a>
+            <a href="https://www.linkedin.com/in/christiebrandao/">linkedin</a>
           </div>
         </div>
       </div>
